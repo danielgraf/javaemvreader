@@ -49,8 +49,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <debug>true</debug>
                     <verbose>false</verbose>
                     <!-- remove this to use platform default encoding -->
@@ -273,38 +273,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-jarsigner-plugin</artifactId>
-                <version>1.3.1</version>
-                <executions>
-                    <execution>
-                        <id>sign</id>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                        <configuration>
-                            <archive>${project.build.directory}/${project.artifactId}-${project.version}-full.jar</archive>
-                            <archiveDirectory>${project.build.directory}</archiveDirectory>
-                            <keystore>${basedir}/keystore</keystore>
-                            <alias>sasc</alias>
-                            <storepass>storepass</storepass>
-                            <keypass>keypass</keypass>
-                            <verbose>false</verbose>
-                            <certs>true</certs>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>verify</id>
-                        <goals>
-                            <goal>verify</goal>
-                        </goals>
-                        <configuration>
-                            <archive>${project.build.directory}/${project.artifactId}-${project.version}-full.jar</archive>
-                        </configuration>
-                    </execution>
-                </executions>
-
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

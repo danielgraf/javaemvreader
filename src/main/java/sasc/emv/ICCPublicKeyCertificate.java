@@ -45,6 +45,10 @@ public class ICCPublicKeyCertificate {
     private byte[] hash = new byte[20];
     private boolean validationPerformed = false;
 
+    public ICCPublicKeyCertificate()
+    {
+        
+    }
     public ICCPublicKeyCertificate(EMVApplication application, IssuerPublicKeyCertificate issuerPublicKeyCert) {
         this.application = application;
         this.issuerPublicKeyCert = issuerPublicKeyCert;

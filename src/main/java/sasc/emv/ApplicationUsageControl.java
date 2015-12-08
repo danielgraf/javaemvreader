@@ -33,6 +33,11 @@ public class ApplicationUsageControl {
     private byte firstByte;
     private byte secondByte;
 
+    public ApplicationUsageControl()
+    {
+        firstByte = (byte) 0x00;
+        secondByte = (byte) 0x00;
+    }
     public ApplicationUsageControl(byte firstByte, byte secondByte) {
         this.firstByte = firstByte;
         this.secondByte = secondByte;

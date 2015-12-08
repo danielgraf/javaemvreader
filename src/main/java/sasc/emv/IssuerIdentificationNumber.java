@@ -29,6 +29,11 @@ public class IssuerIdentificationNumber {
     
     byte[] iinBytes;
     
+    public IssuerIdentificationNumber()
+    {
+        
+    }
+    
     public IssuerIdentificationNumber(byte[] iinBytes) {
         if(iinBytes == null) {
             throw new NullPointerException("Param iinBytes cannot be null");

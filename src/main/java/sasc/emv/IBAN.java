@@ -50,6 +50,11 @@ public class IBAN {
     public String accountNumber;
     public String bankNumber;
     public String countryCode;
+    
+    public IBAN()
+    {
+        
+    }
 
     public IBAN(byte[] iban) {
         if(iban.length > 34) {

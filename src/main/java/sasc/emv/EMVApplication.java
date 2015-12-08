@@ -109,6 +109,16 @@ public class EMVApplication implements Application {
     //entirety in offline data authentication, depending upon the coding of the AFL.
     private List<BERTLV> unknownRecords = new ArrayList<BERTLV>();
     private List<BERTLV> unprocessedRecords = new ArrayList<BERTLV>();
+    private List<BERTLV> processedRecords = new ArrayList<>();
+
+    public List<BERTLV> getProcessedRecords() {
+        return processedRecords;
+    }
+
+    public void setProcessedRecords(List<BERTLV> processedRecords) {
+        this.processedRecords = processedRecords;
+    }
+    
     private SmartCard card = null;
 
     public EMVApplication() {
@@ -731,7 +741,8 @@ public class EMVApplication implements Application {
             String countryStr = ISO3166_1.getCountryForCode(issuerCountryCode);
             if (countryStr != null && countryStr.trim().length() > 0) {
                 description = " (" + countryStr + ")";
-            }
+            } 
+           
             pw.println(indentStr + "Issuer Country Code (ISO 3166-1): " + issuerCountryCode + description);
         }
         if (issuerCountryCodeAlpha3 != null && issuerCountryCodeAlpha3.trim().length() > 0) {

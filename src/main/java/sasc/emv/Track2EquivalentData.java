@@ -39,11 +39,19 @@ public class Track2EquivalentData {
     private Date expirationDate; //numeric 4
     private ServiceCode serviceCode;
     private String discretionaryData; //(defined by individual payment systems)
+    private byte[] rawdata;
 
+    public Track2EquivalentData()
+    {
+        
+    }
     public Track2EquivalentData(byte[] data) {
         if (data.length > 19) {
             throw new SmartCardException("Invalid Track2EquivalentData length: " + data.length);
         }
+        
+        rawdata = data;
+        
         String str = Util.byteArrayToHexString(data).toUpperCase();
         //Field Separator (Hex 'D')
         int fieldSepIndex = str.indexOf('D');
@@ -75,6 +83,11 @@ public class Track2EquivalentData {
     
     public PAN getPAN() {
         return pan;
+    }
+    
+    public String getRawTrack2()
+    {
+        return Util.byteArrayToHexString(rawdata);
     }
 
     @Override

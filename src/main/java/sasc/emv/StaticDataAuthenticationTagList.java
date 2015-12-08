@@ -36,6 +36,10 @@ import sasc.util.Util;
 public class StaticDataAuthenticationTagList {
     private List<Tag> tagList = new ArrayList<Tag>();
 
+    public StaticDataAuthenticationTagList()
+    {
+        
+    }
     public StaticDataAuthenticationTagList(byte[] data){
         //Parse tags and lengths
         ByteArrayInputStream stream = new ByteArrayInputStream(data);

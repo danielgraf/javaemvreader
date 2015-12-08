@@ -68,6 +68,10 @@ public class BankIdentifierCode {
     private String locationCode;
     private String branchCode;
     
+    public BankIdentifierCode()
+    {
+        
+    }
     public BankIdentifierCode(byte[] value) {
         if(value.length != 8 && value.length != 11) {
             throw new SmartCardException("Invalid BIC length: " + value.length);

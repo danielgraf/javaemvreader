@@ -32,6 +32,10 @@ public class LogFormat {
     private List<TagAndLength> formatList;
     private int recordLength = 0;
 
+    public LogFormat()
+    {
+        
+    }
     public LogFormat(byte[] formatBytes){
         this.formatList = TLVUtil.parseTagAndLength(formatBytes);
         for(TagAndLength tal : formatList){

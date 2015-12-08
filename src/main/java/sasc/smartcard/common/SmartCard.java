@@ -212,13 +212,39 @@ public class SmartCard {
     @Override
     public String toString() {
         StringWriter sw = new StringWriter();
-        dump(new PrintWriter(sw), 0);
+        PrintWriter pw = new PrintWriter(sw);
+        dumpRaw(pw);
+        dump(pw, 0);
         return sw.toString();
+    }
+    
+    public void dumpRaw(PrintWriter pw)
+    {
+        for (EMVApplication app : getEmvApplications()) {
+            
+            pw.println("EMV App : " + app.getPreferredName());
+            pw.println("Raw tags");
+            pw.println();
+            if (app.getProcessedRecords() != null)
+            {
+                for (BERTLV tlv : app.getProcessedRecords())
+                {
+                    pw.println("Tag : " + Util.byteArrayToHexString(tlv.getTag().getTagBytes()) + " (" + tlv.getTag().getDescription() + ")");
+                    pw.println("Len : " + Util.byteArrayToHexString(tlv.getRawEncodedLengthBytes()) + " (" + tlv.getLength() + " bytes)");
+                    pw.println("Val : " + Util.byteArrayToHexString(tlv.getValueBytes()));
+                    pw.println();
+                }
+            }
+            
+            pw.println();
+        }
     }
 
     //Dump all information read from the card
     public void dump(PrintWriter pw, int indent) {
 
+        pw.println("Interpreted Data");
+        pw.println();
         for(ATR atr : atrSet){
             atr.dump(pw, indent);
         }

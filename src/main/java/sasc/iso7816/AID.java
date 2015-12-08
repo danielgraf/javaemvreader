@@ -35,6 +35,12 @@ public class AID {
     private byte[] rid;
     //Proprietary Application Identifier Extension
     private byte[] pix;
+    
+    public AID()
+    {
+        this.rid = new byte[rid.length];
+        this.pix = new byte[pix.length];
+    }
 
     public AID(byte[] rid, byte[] pix) {
         if (rid == null || pix == null){

@@ -37,6 +37,10 @@ public class CVMList {
     private byte[] amountField;
     private byte[] secondAmountField;
 
+    public CVMList()
+    {
+        
+    }
     public CVMList(byte[] data){
 
         if(data.length < 8 ){

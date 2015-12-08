@@ -28,6 +28,10 @@ public class ServiceCode {
 
     private char[] serviceCode;
 
+    public ServiceCode()
+    {
+        
+    }
     public ServiceCode(char[] serviceCode) {
         if (serviceCode.length != 3) {
             throw new IllegalArgumentException("ServiceCode must have 3 digits");
@@ -46,9 +50,13 @@ public class ServiceCode {
 
     @Override
     public String toString() {
+        
+        return new String(serviceCode);
+        /*
         StringWriter sw = new StringWriter();
         dump(new PrintWriter(sw), 0);
         return sw.toString();
+                */
     }
 
     public void dump(PrintWriter pw, int indent) {

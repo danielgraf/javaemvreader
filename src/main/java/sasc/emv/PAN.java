@@ -45,6 +45,14 @@ public class PAN {
     public PAN(byte[] panBytes) {
         this(Util.byteArrayToHexString(panBytes));
     }
+    
+    public PAN()
+    {
+        this.panStr = "";
+        accountNumber = -1;
+        mii = -1;
+        iin = new IssuerIdentificationNumber(-1);       
+    }
 
     public PAN(String inputString) {
         if (inputString.length() < 8) {

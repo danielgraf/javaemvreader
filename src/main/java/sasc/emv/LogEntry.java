@@ -30,6 +30,10 @@ public class LogEntry {
     private ShortFileIdentifier sfi;
     private int numRecords;
     
+    public LogEntry()
+    {
+        
+    }
     public LogEntry(byte sfiByte, byte numRecordsByte){
         sfi = new ShortFileIdentifier(sfiByte);
         numRecords = Util.byteToInt(numRecordsByte);

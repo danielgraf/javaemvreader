@@ -45,6 +45,11 @@ public class ICCPinEnciphermentPublicKeyCertificate {
     private byte[] hash = new byte[20];
     private boolean validationPerformed = false;
 
+    public ICCPinEnciphermentPublicKeyCertificate()
+    {
+        application = new EMVApplication();
+        iccPublicKey = new ICCPublicKey();
+    }
     public ICCPinEnciphermentPublicKeyCertificate(EMVApplication application, IssuerPublicKeyCertificate issuerPublicKeyCert) {
         this.application = application;
         this.issuerPublicKeyCert = issuerPublicKeyCert;

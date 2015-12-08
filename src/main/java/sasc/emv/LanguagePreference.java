@@ -32,6 +32,10 @@ public class LanguagePreference {
 
     private List<Locale> prefs;
 
+    public LanguagePreference()
+    {
+        
+    }
     public LanguagePreference(byte[] data) {
         if (data.length < 2 || data.length > 8 || data.length % 2 != 0) {
             throw new SmartCardException("Array length must be an even number between 2 (inclusive) and 8 (inclusive). Length=" + data.length);

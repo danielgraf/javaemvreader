@@ -33,6 +33,10 @@ public class TransactionLog {
     private List<Record> logRecords = new ArrayList<Record>();
     private boolean isProcessed = false;
     
+    public TransactionLog()
+    {
+  
+    }
     public TransactionLog(LogFormat logFormat) {
         this.logFormat = logFormat;
     }

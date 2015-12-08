@@ -520,6 +520,7 @@ public class EMVUtil {
 
         while (bis.available() >= 2) {
             tlv = TLVUtil.getNextTLV(bis);
+            app.getProcessedRecords().add(tlv);
             if (tlv.getTag().equals(EMVTags.CARDHOLDER_NAME)) {
                 app.setCardholderName(Util.getSafePrintChars(tlv.getValueBytes()));
             } else if (tlv.getTag().equals(EMVTags.TRACK1_DISCRETIONARY_DATA)) {

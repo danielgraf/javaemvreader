@@ -44,6 +44,10 @@ public class SignedStaticApplicationData {
     private byte[] hash = new byte[20];
     private boolean validationPerformed = false;
 
+    public SignedStaticApplicationData()
+    {
+        
+    }
     public SignedStaticApplicationData(EMVApplication app) {
         this.application = app;
     }

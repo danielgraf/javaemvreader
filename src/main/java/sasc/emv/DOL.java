@@ -55,6 +55,10 @@ import sasc.util.Util;
  */
 public class DOL {
 
+    public DOL()
+    {
+        
+    }
     public enum Type{
         PDOL("Processing Options Data Object List"),
         CDOL1("Card Risk Management Data Object List 1"),

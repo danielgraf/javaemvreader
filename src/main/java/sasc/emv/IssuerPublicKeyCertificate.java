@@ -45,6 +45,10 @@ public class IssuerPublicKeyCertificate {
     private byte[] hash = new byte[20];
     private boolean validationPerformed = false;
 
+    public IssuerPublicKeyCertificate()
+    {
+        
+    }
     public IssuerPublicKeyCertificate(CA ca) {
         //ca == null is permitted
         this.ca = ca;

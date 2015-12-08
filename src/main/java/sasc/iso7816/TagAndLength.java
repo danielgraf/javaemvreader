@@ -25,6 +25,10 @@ public class TagAndLength {
     private Tag tag;
     private int length;
 
+    public TagAndLength()
+    {
+        
+    }
     public TagAndLength(Tag tag, int length){
         this.tag = tag;
         this.length = length;

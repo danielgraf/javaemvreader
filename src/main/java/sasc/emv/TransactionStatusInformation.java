@@ -29,6 +29,7 @@ public class TransactionStatusInformation {
     private byte firstByte;
     private byte secondByte;
 
+    
     public TransactionStatusInformation(){
         this((byte)0x00, (byte)0x00);  //Initialize with all bits unset
     }

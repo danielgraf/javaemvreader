@@ -42,6 +42,10 @@ public class SignedDynamicApplicationData {
     private boolean isValid = false;
     private boolean validationPerformed = false;
 
+    public SignedDynamicApplicationData()
+    {
+        
+    }
     private SignedDynamicApplicationData(byte[] data, byte[] terminalDynamicData) {
         this.decipheredData = data;
         this.terminalDynamicData = terminalDynamicData;
